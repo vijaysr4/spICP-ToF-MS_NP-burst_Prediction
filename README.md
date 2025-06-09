@@ -6,9 +6,10 @@ The Goal is to create an end-to-end pipeline for NP Prediction from the spICP-To
 
 ## Supervisors
 
-- **Mickael Tharaud**  
-- **Paul Boniol**
+> **Dr. Mickael Tharaud** | Université Paris Cité, IPGP \
+> **Dr. Paul Boniol** | Inria, ENS, PSL Université
 
+> ### [Latex Report](https://www.overleaf.com/read/snbfytpjrshj#b059d4)
 
 ### Repo Structure: 
 ```bash
