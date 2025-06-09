@@ -35,6 +35,22 @@ models/
 ├── preprocess_ts.py                         - Savgol Filter
 ├── test.py
 └── visualize_sample_burst.py                - Plots: small window
+
+thresholding_techniques/
+├── processed_data/
+│   ├── isolation_forest_bursts.csv          - Processed Data
+│   └── mahalanobis_bursts.csv               - Processed Data
+├── results/
+│   ├── isolation_forest_bursts.png          - Peak Plot
+│   ├── mahalanobis_bursts.png               - Peak Plot
+│   ├── peaks_23Na.pkl                       - 23Na Processed data
+│   ├── peaks_23Na_panels.png                - 23Na Plot 
+│   └── … (other result files)
+├── assign_particles_all.py                  
+├── isolation_forest_detection.py            - Isolation Forest Algo
+├── mahalanobis_detection.py                 - Mahalanobis Algo
+└── peak_utils.py                            - Univariate (Otsu’s, Quantile, Rolling, Sigma etc..)
+
 ```
 
 ### Data Analysis 
