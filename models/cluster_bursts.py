@@ -1,5 +1,3 @@
-# cluster_bursts.py
-
 import numpy as np
 import pandas as pd
 import hdbscan

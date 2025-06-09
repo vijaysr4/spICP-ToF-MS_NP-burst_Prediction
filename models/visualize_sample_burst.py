@@ -1,11 +1,9 @@
-# visualize_single_burst_results.py
-
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.cm import get_cmap
 
-# --- User parameters ---
+# User parameters
 RAW_CSV        = "../data/NPs_BHVO_Oct23_full.csv"
 BURSTS_CSV     = "processed_data/detected_bursts.csv"
 CLUSTERED_CSV  = "processed_data/burst_clusters.csv"
@@ -18,7 +16,7 @@ RESULTS_DIR    = "results"
 # Ensure output directory exists
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
-# --- Load data ---
+# Load data
 raw_df       = pd.read_csv(RAW_CSV)
 bursts_df    = pd.read_csv(BURSTS_CSV)
 clustered_df = pd.read_csv(CLUSTERED_CSV)
@@ -40,7 +38,7 @@ window_df = raw_df.loc[mask, isotope_cols]
 max_peak = window_df.max().max()
 ymax     = max_peak * Y_MARGIN
 
-# --- 1) Original data plot ---
+# Original plot
 fig1, ax1 = plt.subplots(figsize=(10, 4), dpi=150)
 for i, col in enumerate(isotope_cols):
     ax1.plot(raw_df[TIME_COL], raw_df[col],
@@ -56,7 +54,7 @@ fig1.tight_layout()
 fig1.savefig(os.path.join(RESULTS_DIR, f"burst_{BURST_IDX}_original.png"), bbox_inches="tight")
 plt.close(fig1)
 
-# --- 2) Highlighted peak region plot ---
+# Peak region plot
 fig2, ax2 = plt.subplots(figsize=(10, 4), dpi=150)
 for i, col in enumerate(isotope_cols):
     ax2.plot(raw_df[TIME_COL], raw_df[col],
@@ -74,7 +72,7 @@ fig2.tight_layout()
 fig2.savefig(os.path.join(RESULTS_DIR, f"burst_{BURST_IDX}_peak.png"), bbox_inches="tight")
 plt.close(fig2)
 
-# --- 3) Cluster fingerprint bar chart ---
+# Cluster fingerprint bar chart
 row = clustered_df.iloc[BURST_IDX]
 fig3, ax3 = plt.subplots(figsize=(10, 4), dpi=150)
 values = row[fp_cols]
