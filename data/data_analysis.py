@@ -7,6 +7,7 @@ print("Sample: 5\n", df.head())
 print(f"\nTotal number of rows: {len(df)}")
 print(f"Total number of columns: {df.shape[1]}")
 
+# min and max time stamp
 if "Time (ms)" in df.columns:
     print(f"Minimum timestamp (ms): {df['Time (ms)'].min()}")
     print(f"Maximum timestamp (ms): {df['Time (ms)'].max()}")
