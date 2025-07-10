@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 from scipy.signal import savgol_filter
-from data import *
-from data.graph import plot_elements_time_series
+from data_analysis import *
+from data_analysis.graph import plot_elements_time_series
 from typing import List
 
 def preprocess_timeseries(

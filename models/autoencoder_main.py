@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
-from models.preprocess_ts import preprocess_timeseries
+from preprocessing.filters import savgol_filter
+from preprocessing.filters import rolling_baseline_norm
+from preprocessing.filters import preprocess_timeseries
 from models.autoencoder_1d_cnn import build_autoencoder
 from typing import List
 
@@ -26,10 +28,12 @@ def main(
     # Load and normalize
     df = pd.read_csv(csv_path)
     features: List[str] = [c for c in df.columns if c != time_col]
+
     df_norm = preprocess_timeseries(
         df, time_col, features,
         smooth_window=smooth_window, smooth_poly=2, roll_window=roll_window
     )
+    # df_norm = df
 
     # Windowing
     data_arr = df_norm[features].values
@@ -65,4 +69,4 @@ if __name__ == "__main__":
     import sys
     main(sys.argv[1], out_path=sys.argv[2] if len(sys.argv)>2 else "detected_bursts.csv")
 
-# python -m models.autoencoder_main data/NPs_BHVO_Oct23_full.csv models/processed_data/detected_bursts.csv
+# python -m models.autoencoder_main data_files/NPs_BHVO_Oct23_full.csv models/processed_data/sg_filter_detected_bursts.csv

@@ -1,3 +1,25 @@
 # Cache
 data/__pycache__/
 models/__pycache__/
+clustering/__pycache__/
+data_analysis/__pycache__/
+preprocessing/__pycache__/
+
+
+# Data
+data_files
+
+# Processed Data
+models/processed_data
+
+# Fingerprints
+clustering/fingerprints
+
+# Clusters
+clustering/results
+
+
+# Thresholding
+thresholding_techniques/results
+thresholding_techniques/processed_data
+thresholding_techniques/merge_channel/multi_ion_windows.csv
