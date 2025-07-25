@@ -1,25 +1,44 @@
-# Cache
-data/__pycache__/
-models/__pycache__/
-clustering/__pycache__/
-data_analysis/__pycache__/
-preprocessing/__pycache__/
+# Cache / Byte‑compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
+# CSV data exports
+*.csv
 
-# Data
-data_files
+# PNG images
+*.png
+
+# Txt files
+*.txt
+
+# Data Files
+/data_files
+
+# Data Analysis
+# Plots
+/data_analysis/results
+
+# Preprocessing
+# Plots
+/preprocessing/plots
+
+# Models
+# General Plots
+/models/results
+
+# Tree based models
+# Isolation Forest Plots and Results
+/models/tree_based/iso_forest/results/
+
+# The mess
+/models/all
 
 # Processed Data
-models/processed_data
+/models/processed_data
 
 # Fingerprints
-clustering/fingerprints
+/clustering/fingerprints
 
 # Clusters
-clustering/results
-
-
-# Thresholding
-thresholding_techniques/results
-thresholding_techniques/processed_data
-thresholding_techniques/merge_channel/multi_ion_windows.csv
+/clustering/results
